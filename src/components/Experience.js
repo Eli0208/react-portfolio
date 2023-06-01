@@ -1,7 +1,9 @@
-import { Box, Flex, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+import { Box, Flex, ListItem, Text, UnorderedList, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Experience() {
+    const [isLargerThan800] = useMediaQuery('(min-width: 900px)')
+    const [isLargerThan400] = useMediaQuery('(min-width: 450px)')
   return (
     <Box
     w='100%'
@@ -36,22 +38,23 @@ export default function Experience() {
         <Flex
         color='#000000'
         mt='5'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         align='center'
         justifyContent='space-between'
         >
             <Text
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             fontWeight='bold'
             >Freelance Developer</Text>
             <Text
             color='darkgray'
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             >May 2023 - Present</Text>
         </Flex>
         <Box
         mt='3'
-        w='50%'
+        fontSize={isLargerThan400 ? '1rem' : '.75rem'}
+        w={isLargerThan800 ? '50%' : '90%'}
         textAlign='justify'
         color='darkgray'
         >
@@ -64,31 +67,33 @@ export default function Experience() {
         <Flex
         color='#000000'
         mt='5'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         align='center'
         justifyContent='space-between'
         >
             <Text
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             fontWeight='bold'
             >Front-End Developer</Text>
             <Text
             color='darkgray'
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             >February 2023 – April 2023</Text>
         </Flex>
         <Flex
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         color='#000000'
         fontWeight='bold'
+        fontSize={isLargerThan400 ? '1rem' : '.75rem'}
         >
             Rooche digital
         </Flex>
         <Box
         color='darkgray'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         textAlign='justify'
         mt='3'
+        fontSize={isLargerThan400 ? '1rem' : '.75rem'}
         >
             <UnorderedList>
                 <ListItem>Develop UI and UX using React components and libraries</ListItem>
@@ -99,40 +104,44 @@ export default function Experience() {
         <Flex
         color='#000000'
         mt='5'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         align='center'
         justifyContent='space-between'
         >
             <Text
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             fontWeight='bold'
             >Design Engineer I</Text>
             <Text
             color='darkgray'
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             >December 2021 – January 2023</Text>
         </Flex>
         <Flex
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
+        align='center'
         color='#000000'
         justifyContent='space-between'
         >
             <Text
             fontWeight='bold'
+            fontSize={isLargerThan400 ? '1rem' : '.65rem'}
             >
             Tsukiden Global Solutions, Inc.
             </Text>
             <Text
             color='darkgray'
+            fontSize={isLargerThan400 ? '1rem' : '.65rem'}
             >
             Ortigas Center, Pasig City
             </Text>
         </Flex>
         <Box
         color='darkgray'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         textAlign='justify'
         mt='3'
+        fontSize={isLargerThan400 ? '1rem' : '.75rem'}
         >
             <UnorderedList>
                 <ListItem>Maintenance and debugging of the ticketing system</ListItem>
@@ -143,40 +152,43 @@ export default function Experience() {
         <Flex
         color='#000000'
         mt='5'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         align='center'
         justifyContent='space-between'
         >
             <Text
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             fontWeight='bold'
             >SQA Engineer</Text>
             <Text
             color='darkgray'
-            fontSize='1.5rem'
+            fontSize={isLargerThan400 ? '1.5rem' : '.75rem'}
             >October 2020 – November 2021</Text>
         </Flex>
         <Flex
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         color='#000000'
         justifyContent='space-between'
         >
             <Text
             fontWeight='bold'
+            fontSize={isLargerThan400 ? '1rem' : '.75rem'}
             >
             Metalabs, Inc.
             </Text>
             <Text
             color='darkgray'
+            fontSize={isLargerThan400 ? '1rem' : '.75rem'}
             >
             Porac, Pampanga
             </Text>
         </Flex>
         <Box
         color='darkgray'
-        w='50%'
+        w={isLargerThan800 ? '50%' : '90%'}
         textAlign='justify'
         mt='3'
+        fontSize={isLargerThan400 ? '1rem' : '.75rem'}
         >
             <UnorderedList>
                 <ListItem>Perform manual testing of software applications to identify and report defects or issues, ensuring the quality and functionality of the product.</ListItem>

@@ -1,10 +1,11 @@
-import { Box, Button, Flex, Image, Text, color } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Text, color, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import alined from '../assets/alined.png'
 import rpiArd from '../assets/ard-rpi.png'
 import mern from '../assets/mern.png'
 
 export default function Summary() {
+    const [isLargerThan800] = useMediaQuery('(min-width: 900px)')
     const handleDownload = () => {
         // Replace 'google-drive-file-id' with the actual ID of your PDF file in Google Drive
         const fileId = 'google-drive-file-id';
@@ -48,7 +49,7 @@ export default function Summary() {
             >About me</Text>
         </Flex>
         <Box
-            w='25%'
+            w={isLargerThan800 ? '25%' : '100%'}
             h='60%'
             align='center'
             float='left'

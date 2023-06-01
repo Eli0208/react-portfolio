@@ -1,4 +1,4 @@
-import { Flex, Image, Link } from '@chakra-ui/react'
+import { Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import fb from '../assets/Facebook.png'
 import gh from '../assets/Github.png'
@@ -7,15 +7,18 @@ import linked from '../assets/LinkedIn.png'
 import twit from '../assets/Twitter.png'
 
 export default function Footer() {
+    const [isLargerThan800] = useMediaQuery('(min-width: 900px)')
   return (
     <Flex
         h='10vh'
         w='100%'
         justifyContent='center'
+        position={!isLargerThan800 && 'fixed'}
+        bottom={!isLargerThan800 && '0'}
     >
         <Flex
             p='3'
-            w='50%'
+            w={isLargerThan800 ? '50%' : '90%'}
             h='100%'
             justifyContent='space-between'
         >
