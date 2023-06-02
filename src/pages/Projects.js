@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import ProjectCard from '../components/ProjectCard'
 import boot from '../assets/bs_port.png'
@@ -18,10 +18,12 @@ const projContent = [{
 }]
 
 export default function Projects() {
+    const [isLargerThan900] = useMediaQuery('(min-width : 900px)')
   return (
     <Box
     h='80vh'
     w='100%'
+    overflowY='auto'
     >
         <Flex
             w='100%'
@@ -34,10 +36,11 @@ export default function Projects() {
             >Projects</Text>
         </Flex>
         <Flex
-        mt='10'
+        mt={isLargerThan900 ? '10' : '0' }
         p='10'
         h='70%'
         w='100%'
+        display={isLargerThan900 ? 'flex' : 'block'}
         justifyContent='space-around'
         align='center'
         >

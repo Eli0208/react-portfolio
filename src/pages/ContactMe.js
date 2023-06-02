@@ -16,13 +16,15 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
-    CircularProgress
+    CircularProgress,
+    useMediaQuery
 } from '@chakra-ui/react'
 import React, { useRef, useState } from 'react'
 import map from '../assets/map.png'
 import emailjs from '@emailjs/browser'
 
 export default function ContactMe() {
+    const [isLargerThan900] = useMediaQuery('(min-width : 900px)')
     const form = useRef();
     const [message, setMessage] = useState()
     const [title, setTitle] = useState()
@@ -74,12 +76,14 @@ export default function ContactMe() {
         <Flex
         h='90%'
         w='100%'
+        direction={isLargerThan900 ? "row" : "column-reverse"}
+        overflowY='auto'
         >
             <Flex
-            w='50%'
-            h='100%'
+            w={isLargerThan900 ? '50%' : '90%'}
             justifyContent='center'
             alignItems='center'
+            mx={!isLargerThan900 && '5%'}
             >
                 <Flex
                     h='70%'
@@ -89,19 +93,21 @@ export default function ContactMe() {
                     cursor='zoom-in'
                     onClick={() => window.open('https://goo.gl/maps/YnBJmofmXDBhN2mo7','_blank')}
                     shadow='2xl'
+                    justifyContent='center'
                 >
                     <Image src={map}/>
                 </Flex>
             </Flex>
             <Flex
             h='100%'
-            w='50%'
+            mx={!isLargerThan900 && '5%'}
+            w={isLargerThan900 ? '50%' : '90%'}
             justifyContent='center'
             align='center'
             >
                 <Box
-                w='70%'
-                h='70%'
+                w={isLargerThan900 ? '70%' : '100%'}
+                
                 border='1px solid #8ec044'
                 borderRadius='1rem'
                 shadow='2xl'

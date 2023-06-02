@@ -1,13 +1,15 @@
-import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Text, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 
 export default function ProjectCard({content}) {
+  const [isLargerThan900] = useMediaQuery('(min-width : 900px)')
   return (
     <Box
+    mt='3'
     bgColor='#8ec044'
     borderRadius='1rem'
     color='black'
-    w='30%'
+    w={isLargerThan900 ? '30%' : '100%'}
     p='3'
     shadow='2xl'
     _hover={{
